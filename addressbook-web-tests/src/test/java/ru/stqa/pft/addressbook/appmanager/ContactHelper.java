@@ -1,7 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -60,5 +59,13 @@ public class ContactHelper extends HelperBase{
 
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public void getContactList() {
+
+  }
+
+  public int getContactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
