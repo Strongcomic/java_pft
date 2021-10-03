@@ -16,7 +16,7 @@ public final class GroupData {
   }
 
   public int id() {
-    return 0;
+    return Integer.MAX_VALUE;
   }
 
   @Override
