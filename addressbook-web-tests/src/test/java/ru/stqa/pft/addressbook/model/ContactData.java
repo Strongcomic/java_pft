@@ -3,13 +3,18 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public final class ContactData {
-  private final String id;
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  private int id;
   private final String firstName;
   private final String middleName;
   private final String lastName;
   private final String nickname;
 
-  public ContactData(String firstName, String middleName, String lastName, String nickname, String id) {
+  public ContactData(String firstName, String middleName, String lastName, String nickname, int id) {
     this.id = id;
     this.firstName = firstName;
     this.middleName = middleName;
@@ -17,8 +22,21 @@ public final class ContactData {
     this.nickname = nickname;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstName, lastName);
+  }
+
   public ContactData(String firstName, String middleName, String lastName, String nickname) {
-    this.id = null;
+    this.id = Integer.MAX_VALUE;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
@@ -42,19 +60,6 @@ public final class ContactData {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, firstName, lastName);
-  }
-
-  @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
@@ -63,12 +68,12 @@ public final class ContactData {
             '}';
   }
 
-  public String id() {
+  public int id() {
     return id;
   }
 
 
-  public String getId() {
+  public int getId() {
     return id;
   }
 }
