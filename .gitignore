@@ -18,4 +18,5 @@ addressbook-web-tests/build/reports/tests/test/index.html
 
 *.html
 addressbook-web-tests/build/test-results/test/TEST-ru.stqa.pft.addressbook.tests.ContactModificationTests.xml
-*.html
+addressbook-web-tests\build
+addressbook-web-tests/.gradle

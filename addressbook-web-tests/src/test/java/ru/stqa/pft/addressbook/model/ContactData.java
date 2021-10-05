@@ -4,23 +4,11 @@ import java.util.Objects;
 
 public final class ContactData {
 
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  private int id;
-  private final String firstName;
-  private final String middleName;
-  private final String lastName;
-  private final String nickname;
-
-  public ContactData(String firstName, String middleName, String lastName, String nickname, int id) {
-    this.id = id;
-    this.firstName = firstName;
-    this.middleName = middleName;
-    this.lastName = lastName;
-    this.nickname = nickname;
-  }
+  private int id = Integer.MAX_VALUE;
+  private String firstName;
+  private String middleName;
+  private String lastName;
+  private String nickname;
 
   @Override
   public boolean equals(Object o) {
@@ -33,14 +21,6 @@ public final class ContactData {
   @Override
   public int hashCode() {
     return Objects.hash(firstName, lastName);
-  }
-
-  public ContactData(String firstName, String middleName, String lastName, String nickname) {
-    this.id = Integer.MAX_VALUE;
-    this.firstName = firstName;
-    this.middleName = middleName;
-    this.lastName = lastName;
-    this.nickname = nickname;
   }
 
   public String firstName() {
@@ -68,13 +48,33 @@ public final class ContactData {
             '}';
   }
 
-  public int id() {
+  public int getId() {
     return id;
   }
 
+  public ContactData withFirstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
 
-  public int getId() {
-    return id;
+  public ContactData withMiddleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+  public ContactData withLastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+  public ContactData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
   }
 }
 
