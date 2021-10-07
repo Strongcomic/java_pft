@@ -4,10 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class ContactHelper extends HelperBase{
@@ -39,6 +38,21 @@ public class ContactHelper extends HelperBase{
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
+  public void selectContactById(int id) {
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for(WebElement e : elements)
+    {
+      WebElement checkbox = e.findElements(By.tagName("td")).get(0).findElement(By.tagName("input"));
+
+      if(id == Integer.parseInt(checkbox.getAttribute("value")))
+      {
+        checkbox.click();
+        return;
+      }
+    }
+  }
+
+
   public void deleteSelectedContacts() {
     click(By.xpath("//input[@value='Delete']"));
   }
@@ -62,16 +76,31 @@ public class ContactHelper extends HelperBase{
     returnToHomePage();
   }
 
-  public void modify(int index, ContactData contact) {
-    selectContact(index);
-    initContactModification();
+  public void modify(ContactData contact) {
+    selectContactById(contact.getId());
+    initContactModificationById(contact.getId());
     fillContactForm(contact);
     sumbitContactModification();
     returnToHomePage();
   }
 
-  public void delete(int index) {
-    selectContact(index);
+  private void initContactModificationById(int id) {
+    List<WebElement> elements = wd.findElements(By.name("entry"));
+    for(WebElement e : elements)
+    {
+      List<WebElement> row = e.findElements(By.tagName("td"));
+      WebElement checkbox = row.get(0).findElement(By.tagName("input"));
+
+      if(id == Integer.parseInt(checkbox.getAttribute("value")))
+      {
+        row.get(7).click();
+        return;
+      }
+    }
+  }
+
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
     deleteSelectedContacts();
     acceptAlert();
     returnToHomePage();
@@ -81,8 +110,8 @@ public class ContactHelper extends HelperBase{
     return isElementPresent(By.name("selected[]"));
   }
 
-  public List<ContactData> list() {
-    List<ContactData> contacts = new ArrayList<ContactData>();
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
     for (WebElement element : elements) {
       String firstName = element.findElement(By.xpath("./td[3]")).getText();
