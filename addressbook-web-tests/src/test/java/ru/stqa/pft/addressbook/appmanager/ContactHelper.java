@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class ContactHelper extends HelperBase{
@@ -26,6 +24,7 @@ public class ContactHelper extends HelperBase{
     type(By.name("middlename"), contactData.middleName());
     type(By.name("lastname"), contactData.lastName());
     type(By.name("nickname"), contactData.nickname());
+    attach(By.name("photo"), contactData.photo());
   }
 
   public void sumbitContactCreation() {

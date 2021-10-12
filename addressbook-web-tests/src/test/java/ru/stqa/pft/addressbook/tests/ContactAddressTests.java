@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactAddressesTests extends TestBase {
+public class ContactAddressTests extends TestBase {
 
   @Test
   public void testContactAddresses() {
@@ -21,6 +21,6 @@ public class ContactAddressesTests extends TestBase {
   }
 
   public static String cleaned(String phone) {
-    return phone.replaceAll("  "," ");
+    return phone.replaceAll("  +"," ").trim();
   }
 }
