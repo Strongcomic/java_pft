@@ -12,6 +12,10 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+index.html
+results.bin
+previous-compilation-data.bin
+*.class
 .idea/workspace.xml
 addressbook-web-tests/build/reports/tests/test/classes/ru.stqa.pft.addressbook.tests.ContactModificationTests.html
 addressbook-web-tests/build/reports/tests/test/index.html
@@ -24,4 +28,9 @@ addressbook-web-tests/build/reports/tests/test/packages/ru.stqa.pft.addressbook.
 *.class
 *.html
 addressbook-web-tests/build
+
+index.html
+results.bin
+previous-compilation-data.bin
+*.class
 
