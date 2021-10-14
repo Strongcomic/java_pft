@@ -16,7 +16,7 @@ public class NewContactCreationTests extends TestBase {
     app.goTo().homePage();
     app.contact().initContactCreation();
     File photo = new File("src/test/resources/trust1.png");
-    app.contact().fillContactForm(new ContactData().withFirstName("John").withLastName("Weak").withPhoto(photo));
+    app.contact().fillContactForm(new ContactData().withFirstName("J1hn").withLastName("Weak").withPhoto(photo));
     app.contact().sumbitContactCreation();
     app.goTo().homePage();
 
