@@ -1,8 +1,22 @@
-ÐHibernate: select groupdata0_.group_id as group_id1_0_, groupdata0_.group_footer as group_fo2_0_, groupdata0_.group_header as group_he3_0_, groupdata0_.group_name as group_na4_0_ from group_list groupdata0_
+õHibernate: select contactdat0_.id as id1_1_, contactdat0_.address as address2_1_, contactdat0_.email as email3_1_, contactdat0_.email2 as email4_1_, contactdat0_.email3 as email5_1_, contactdat0_.firstname as firstnam6_1_, contactdat0_.home as home7_1_, contactdat0_.lastname as lastname8_1_, contactdat0_.middleName as middlena9_1_, contactdat0_.mobile as mobile10_1_, contactdat0_.nickname as nicknam11_1_, contactdat0_.work as work12_1_ from addressbook contactdat0_ where deprecated='0000-00-00'
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+8ContactData{id=160, firstName='ffff', lastName='ffff'}
+DContactData{id=161, firstName='fFFF123F123', lastName='123123123'}
+HContactData{id=162, firstName='ZZZZZZZZZZZZ', lastName='ZZZZZZZZZZZZ'}
+4ContactData{id=163, firstName='', lastName='test'}
+5ContactData{id=164, firstName='', lastName='test2'}
+5ContactData{id=165, firstName='', lastName='test2'}
+5ContactData{id=166, firstName='', lastName='test2'}
+ÐHibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_
 @GroupData{name='test1', header='test2', footer='test3', id=23}
 @GroupData{name='test1', header='test2', footer='test3', id=43}
 6GroupData{name='test2', header='', footer='', id=45}
-@GroupData{name='test1', header='test2', footer='test3', id=46}
 6GroupData{name='test2', header='', footer='', id=55}
 6GroupData{name='test2', header='', footer='', id=56}
 6GroupData{name='test2', header='', footer='', id=57}
@@ -38,3 +52,63 @@
 EGroupData{name='test 0', header='header0', footer='footer0', id=89}
 EGroupData{name='test 1', header='header1', footer='footer1', id=90}
 EGroupData{name='test 2', header='header2', footer='footer2', id=91}
+EGroupData{name='test 0', header='header0', footer='footer0', id=92}
+EGroupData{name='test 1', header='header1', footer='footer1', id=93}
+EGroupData{name='test 2', header='header2', footer='footer2', id=94}
+õHibernate: select contactdat0_.id as id1_1_, contactdat0_.address as address2_1_, contactdat0_.email as email3_1_, contactdat0_.email2 as email4_1_, contactdat0_.email3 as email5_1_, contactdat0_.firstname as firstnam6_1_, contactdat0_.home as home7_1_, contactdat0_.lastname as lastname8_1_, contactdat0_.middleName as middlena9_1_, contactdat0_.mobile as mobile10_1_, contactdat0_.nickname as nicknam11_1_, contactdat0_.work as work12_1_ from addressbook contactdat0_ where deprecated='0000-00-00'
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+úHibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+8ContactData{id=160, firstName='ffff', lastName='ffff'}
+DContactData{id=161, firstName='fFFF123F123', lastName='123123123'}
+HContactData{id=162, firstName='ZZZZZZZZZZZZ', lastName='ZZZZZZZZZZZZ'}
+4ContactData{id=163, firstName='', lastName='test'}
+5ContactData{id=164, firstName='', lastName='test2'}
+5ContactData{id=165, firstName='', lastName='test2'}
+5ContactData{id=166, firstName='', lastName='test2'}
+ÐHibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_
+@GroupData{name='test1', header='test2', footer='test3', id=23}
+@GroupData{name='test1', header='test2', footer='test3', id=43}
+6GroupData{name='test2', header='', footer='', id=45}
+6GroupData{name='test2', header='', footer='', id=55}
+6GroupData{name='test2', header='', footer='', id=56}
+6GroupData{name='test2', header='', footer='', id=57}
+6GroupData{name='test2', header='', footer='', id=58}
+DGroupData{name='test1', header='header1', footer='footer1', id=59}
+DGroupData{name='test2', header='header2', footer='footer2', id=60}
+DGroupData{name='test3', header='header3', footer='footer3', id=61}
+DGroupData{name='test1', header='header1', footer='footer1', id=62}
+DGroupData{name='test2', header='header2', footer='footer2', id=63}
+DGroupData{name='test3', header='header3', footer='footer3', id=64}
+DGroupData{name='test1', header='header1', footer='footer1', id=65}
+DGroupData{name='test2', header='header2', footer='footer2', id=66}
+DGroupData{name='test3', header='header3', footer='footer3', id=67}
+IGroupData{name='test 0', header=' header 0', footer=' footer 0', id=68}
+IGroupData{name='test 1', header=' header 1', footer=' footer 1', id=69}
+IGroupData{name='test 2', header=' header 2', footer=' footer 2', id=70}
+IGroupData{name='test 3', header=' header 3', footer=' footer 3', id=71}
+IGroupData{name='test 4', header=' header 4', footer=' footer 4', id=72}
+IGroupData{name='test 5', header=' header 5', footer=' footer 5', id=73}
+IGroupData{name='test 6', header=' header 6', footer=' footer 6', id=74}
+IGroupData{name='test 7', header=' header 7', footer=' footer 7', id=75}
+IGroupData{name='test 8', header=' header 8', footer=' footer 8', id=76}
+IGroupData{name='test 9', header=' header 9', footer=' footer 9', id=77}
+LGroupData{name='test 10', header=' header 10', footer=' footer 10', id=78}
+LGroupData{name='test 11', header=' header 11', footer=' footer 11', id=79}
+LGroupData{name='test 12', header=' header 12', footer=' footer 12', id=80}
+LGroupData{name='test 13', header=' header 13', footer=' footer 13', id=81}
+LGroupData{name='test 14', header=' header 14', footer=' footer 14', id=82}
+@GroupData{name='test1', header='test2', footer='test3', id=83}
+EGroupData{name='test 1', header='header1', footer='footer1', id=84}
+@GroupData{name='test1', header='test2', footer='test3', id=86}
+EGroupData{name='test 1', header='header1', footer='footer1', id=87}
+EGroupData{name='test 0', header='header0', footer='footer0', id=89}
+EGroupData{name='test 1', header='header1', footer='footer1', id=90}
+EGroupData{name='test 2', header='header2', footer='footer2', id=91}
+EGroupData{name='test 0', header='header0', footer='footer0', id=92}
+EGroupData{name='test 1', header='header1', footer='footer1', id=93}
+EGroupData{name='test 2', header='header2', footer='footer2', id=94}
