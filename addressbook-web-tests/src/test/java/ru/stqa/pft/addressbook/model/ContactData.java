@@ -2,30 +2,65 @@ package ru.stqa.pft.addressbook.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import javax.swing.*;
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
 
   @XStreamOmitField
+  @Id
+  @Column(name = "id")
   private int id = Integer.MAX_VALUE;
+  @Column(name = "firstname")
   private String firstName;
   private String middleName;
+  @Column(name = "lastname")
   private String lastName;
   private String nickname;
+  @Column(name = "home")
+  @Type(type = "text")
   private String homePhone;
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilePhone;
+  @Column(name = "work")
+  @Type(type = "text")
   private String workPhone;
+  @Transient
   private String allPhones;
+  @Transient
   private String allEmails;
+  @Column(name = "address")
+  @Type(type = "text")
   private String allAddresses;
+  @Column(name = "email")
+  @Type(type = "text")
   private String email1;
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email2;
+  @Column(name = "email3")
+  @Type(type = "text")
   private String email3;
+  @Transient
   private File photo;
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups"
+          , joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
+
+  public Groups getGroups() {
+    return new Groups(groups);
+  }
 
   public File photo() {
     return photo;
@@ -33,6 +68,11 @@ public class ContactData {
 
   public ContactData withPhoto(File photo) {
     this.photo = photo;
+    return this;
+  }
+
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
     return this;
   }
 

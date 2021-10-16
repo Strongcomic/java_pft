@@ -3,10 +3,16 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.List;
+
+
 
 
 public class ContactHelper extends HelperBase{
@@ -157,5 +163,36 @@ public class ContactHelper extends HelperBase{
     return new ContactData().withId(contact.getId()).withFirstName(firstName).withLastName(lastName)
             .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withAllAddresses(address)
             .withEmail1(email1).withEmail2(email2).withEmail3(email3);
+  }
+
+  public void selectGroup(String groupName) {
+    new Select(wd.findElement(By.name("group"))).selectByVisibleText(groupName);
+  }
+
+  public void addContactToGroup(ContactData contact, GroupData group) {
+    selectContactById(contact.getId());
+    String groupName= group.name();
+    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(group.name());
+    wd.findElement(By.name("add")).click();
+  }
+  public void removeContactFromGroup(ContactData contact, GroupData groupUnassigned) {
+    selectGroup(groupUnassigned.name());
+    selectContactById(contact.getId());
+    wd.findElement(By.name("remove")).click();
+  }
+
+
+
+  public boolean isContactInGroup(ContactData contact, GroupData group){
+    if (contact.getGroups().size()==0){
+      return false;
+    }
+    Groups contactGroups= contact.getGroups();
+    for (GroupData contactGroup:contactGroups) {
+      if (contactGroup.equals(group)){
+        return true;
+      }
+    }
+    return false;
   }
 }
