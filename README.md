@@ -1,6 +1,7 @@
-# java_pft 
-[AddressBook **Front/Backend** Tests]
+# Java Automation QA 
 **Pet project**
+[AddressBook **Front/Backend** Tests]
+
 
 Stack:
 1. Java 17
