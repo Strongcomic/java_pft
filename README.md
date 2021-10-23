@@ -1,6 +1,6 @@
 # Java Automation QA 
 **Pet project**
-[AddressBook **Front/Backend** Tests]
+AddressBook **Front/Backend** Tests
 
 
 Stack:
